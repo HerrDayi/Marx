@@ -1,0 +1,53 @@
+\documentclass[a4paper, 12pt, landscape]{scrartcl}
+
+\usepackage[a4paper, landscape, margin=1.0cm]{geometry}
+\usepackage[ngerman]{babel}
+\usepackage{libertinus}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+
+\pagestyle{empty}
+
+\definecolor{primaryBlue}{RGB}{20, 50, 100}
+\definecolor{cardBg}{RGB}{252, 253, 255}
+
+\newcommand{\kernaussageStreifen}[4]{%
+    \noindent\begin{tcolorbox}[
+        enhanced,
+        colback=cardBg,
+        colframe=primaryBlue,
+        boxrule=3pt,
+        arc=4mm,
+        valign=center,
+        halign=center,
+        height=17.5cm,
+        top=0.6cm, bottom=0.6cm, left=1.0cm, right=1.0cm,
+        title={\LARGE\bfseries #1 \enskip$\cdot$\enskip \normalsize #2},
+        fonttitle=\bfseries\color{white},
+        attach boxed title to top center={yshift=-4.5mm},
+        boxed title style={colback=primaryBlue, arc=2mm, boxrule=0pt, left=10mm, right=10mm, top=3mm, bottom=3mm}
+    ]
+        \vspace{0.4cm}
+        {\fontsize{38pt}{48pt}\selectfont\sffamily\bfseries\color{primaryBlue} \glqq #3\grqq}
+        
+        \vfill
+        {\large\bfseries\color{gray} #4}
+    \end{tcolorbox}
+    \newpage
+}
+
+\begin{document}
+
+% --- SATZ A ---
+\kernaussageStreifen{SATZ A}{Kernaussage}{Das Tier produziert nur unter der Herrschaft des physischen Bedürfnisses, während der Mensch frei produziert und erst wahrhaft produziert in der Freiheit [\dots] der Mensch formiert daher auch nach den Gesetzen der Schönheit.}{Karl Marx: Ökonomisch-philosophische Manuskripte (1844)}
+
+% --- SATZ B ---
+\kernaussageStreifen{SATZ B}{Kernaussage}{Was das Produkt seiner Arbeit ist, ist er nicht. Je mehr Gegenstände der Arbeiter produziert, um so mehr gerät er unter die Herrschaft seines Produkts, des Kapitals.}{Karl Marx: Ökonomisch-philosophische Manuskripte (1844)}
+
+% --- SATZ C ---
+\kernaussageStreifen{SATZ C}{Kernaussage}{Seine Arbeit ist daher nicht freiwillig, sondern gezwungen, Zwangsarbeit. Sie ist nicht die Befriedigung eines Bedürfnisses, sondern nur ein Mittel, um Bedürfnisse außer ihr zu befriedigen.}{Karl Marx: Ökonomisch-philosophische Manuskripte (1844)}
+
+% --- SATZ D ---
+\kernaussageStreifen{SATZ D}{Kernaussage}{Es kommt daher zum Resultat, dass der Mensch sich nur mehr in seinen tierischen Funktionen (Essen, Trinken, Zeugen) als freitätig fühlt und in seinen menschlichen Funktionen nur mehr als Tier.}{Karl Marx: Ökonomisch-philosophische Manuskripte (1844)}
+
+\end{document}

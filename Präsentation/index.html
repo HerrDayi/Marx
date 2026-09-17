@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karl Marx: Die entfremdete Arbeit – Präsentation Q1</title>
+  <style>
+    :root {
+      --primary: #143264;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #cbd5e1;
+      --danger: #dc2626;
+      --gold: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; }
+    body {
+      background: #0f172a;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+    header {
+      background: rgba(15, 23, 42, 0.95);
+      padding: 12px 24px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #334155;
+      font-size: 0.9rem;
+    }
+    .badge {
+      background: var(--accent);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      max-width: 1100px;
+      height: 88%;
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+      padding: 36px 48px;
+      flex-direction: column;
+      animation: fadeIn 0.25s ease;
+      overflow-y: auto;
+    }
+    .slide.active { display: flex; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 { color: var(--primary); font-size: 2.4rem; margin-bottom: 10px; }
+    h2 { color: var(--primary); font-size: 1.7rem; margin-bottom: 18px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+    h3 { color: var(--accent); font-size: 1.2rem; margin-bottom: 8px; }
+    p, li { font-size: 1.15rem; line-height: 1.6; color: #334155; }
+    ul { margin-left: 24px; margin-bottom: 14px; }
+    li { margin-bottom: 8px; }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 12px;
+    }
+    .card {
+      background: #f1f5f9;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 5px solid var(--primary);
+    }
+    .quote-box {
+      font-style: italic;
+      font-size: 1.25rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 16px;
+      margin: 14px 0;
+      color: #1e293b;
+      line-height: 1.5;
+    }
+    .action-btn {
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .action-btn:hover { background: var(--accent-hover); }
+    .footer-bar {
+      background: rgba(15, 23, 42, 0.95);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #334155;
+    }
+    .nav-btn {
+      background: #1e293b;
+      color: #fff;
+      border: 1px solid #334155;
+      padding: 8px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .nav-btn:hover { background: var(--accent); }
+    .slide-counter { color: #94a3b8; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><strong>Philosophie Q1</strong> &bull; Herr Dayi</div>
+    <div><span class="badge">Anthropologie &amp; Kultur</span> Karl Marx (1844)</div>
+  </header>
+
+  <div class="container">
+
+    <!-- FOLIE 1: TITEL (Freud-Stil) -->
+    <div class="slide active">
+      <div style="margin: auto; text-align: center;">
+        <div style="font-size: 3.5rem; margin-bottom: 12px;">😊</div>
+        <h1>Guten Morgen!</h1>
+        <p style="font-size: 1.5rem; color: #64748b; margin-bottom: 24px;">Schön, dass Ihr da seid!</p>
+        <div style="margin-top: 20px; font-size: 1.1rem; color: #334155;">
+          <strong>Herr Dayi</strong> &bull; Philosophie Q1 &bull; <em>Karl Marx: Die entfremdete Arbeit</em>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOLIE 2: 1. CHAPLIN EINSTIEG (Video & offenes Problem) -->
+    <div class="slide">
+      <h2>🎬 1. Einstieg: Charlie Chaplin – Moderne Zeiten (1936)</h2>
+      <div style="margin-top: 14px;">
+        <div class="card">
+          <h3 style="color: var(--primary);">🎥 Beobachtungsauftrag:</h3>
+          <p style="font-size: 1.25rem;">Was geschieht mit Charlie an der Maschine? Wie verändern sich Körper, Geist und Verhalten?</p>
+        </div>
+        <div style="margin-top: 40px; padding: 24px; border: 2px dashed #cbd5e1; border-radius: 12px; min-height: 220px;">
+          <h3 style="color: #dc2626; font-size: 1.4rem;">⚠️ Problem / Leitfrage:</h3>
+          <p style="color: #94a3b8; font-style: italic; margin-top: 10px;">[Freiraum für gemeinsame Notizen &amp; Problemformulierung]</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOLIE 3: HEUTIGER PLAN (nach Problemerarbeitung) -->
+    <div class="slide">
+      <h2>📋 Heutiger Plan</h2>
+      <ul style="font-size: 1.25rem; line-height: 2.1; margin-top: 16px; list-style: none;">
+        <li>💬 <strong>1. Think &amp; Group:</strong> Die Kernaussagen erschließen</li>
+        <li>🎛️ <strong>2. Rekonstruktion:</strong> Kernaussagen-Board am Beamer</li>
+        <li>📖 <strong>3. Erarbeitung:</strong> Schulbuchtext (S. 168–170)</li>
+        <li>🏛️ <strong>4. Sicherung:</strong> Die 4 Dimensionen der Entfremdung</li>
+        <li>🧭 <strong>5. Synthese:</strong> Marx im Advanced Organizer</li>
+        <li>🎨 <strong>6. Transfer:</strong> Marx im Meme (oder Comic-Vorlage)</li>
+        <li>✅ <strong>7. Check-Out:</strong> Reflexion</li>
+      </ul>
+    </div>
+
+    <!-- FOLIE 4: 2. THINK & GROUP -->
+    <div class="slide">
+      <h2>💬 2. Erschließung: Kernaussagen</h2>
+      <div class="card" style="margin-top: 10px;">
+        <h3>Textausschnitte:</h3>
+        <p>Jede Gruppe erhält <strong>einen isolierten Satz</strong> aus einem philosophischen Text.</p>
+      </div>
+      <div style="margin-top: 24px;">
+        <h3>Arbeitsaufträge in der Gruppe:</h3>
+        <ul>
+          <li><strong>1. Eigene Worte:</strong> Was will uns der Philosoph mit diesem Satz sagen? Formuliert eine prägnante Erklärung.</li>
+          <li><strong>2. Chaplin-Bezug &amp; Alltag:</strong> Passt dieser Satz zu Chaplins Fabrikschicksal? Findet ein heutiges Alltagsbeispiel.</li>
+        </ul>
+      </div>
+      <div style="margin-top: 24px; color: var(--text-muted); font-size: 1.05rem;">
+        ⏱️ <strong>Zeit:</strong> ca. 8–10 Min. | 👥 <strong>Sozialform:</strong> Kleingruppen
+      </div>
+    </div>
+
+    <!-- FOLIE 5: 3. BEAMER-REKONSTRUKTION -->
+    <div class="slide">
+      <h2>🎛️ 3. Rekonstruktion: Kernaussagen-Board</h2>
+      <div class="card" style="margin-top: 10px;">
+        <h3>Arbeitsauftrag:</h3>
+        <p style="font-size: 1.2rem;">Bringt die 4 Aussagen am Beamer in eine <strong>logische Reihenfolge</strong> (Ursache &rarr; Folge) und begründet eure Kurshypothese!</p>
+      </div>
+      <div style="margin-top: 20px;" class="grid-2">
+        <div style="border: 1px solid #cbd5e1; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+          <img src="screenshot_board.png" alt="Kernaussagen-Board" style="width: 100%; height: auto; display: block;">
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;">
+          <a href="../digitale Hilfe/kernaussagen_board.html" target="_blank" class="action-btn" style="font-size: 1.2rem; padding: 16px 28px;">
+            🚀 Kernaussagen-Board öffnen &rarr;
+          </a>
+          <span style="font-size: 0.9rem; color: var(--text-muted);">(Interaktives Beamer-Tool mit Mischen &amp; Kette)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOLIE 6: 4. SCHULBUCHTEXT ERARBEITUNG -->
+    <div class="slide">
+      <h2>📖 4. Erarbeitung: Schulbuchtext (S. 168–170)</h2>
+      <div class="grid-2" style="margin-top: 10px;">
+        <div>
+          <h3>Arbeitsauftrag:</h3>
+          <ul>
+            <li><strong>1. Textabgleich:</strong> Findet eure Kernaussage im Originaltext wieder. Hatten wir am Beamer recht?</li>
+            <li><strong>2. Entfremdungsdimension:</strong> Welcher Aspekt der Entfremdung wird in eurem Textabschnitt beschrieben?</li>
+          </ul>
+          <div style="margin-top: 20px; color: var(--text-muted); font-size: 1.05rem;">
+            ⏱️ <strong>Zeit:</strong> ca. 20 Min. | 👥 <strong>Sozialform:</strong> PA / Kleingruppe
+          </div>
+          <div style="margin-top: 18px; font-size: 0.95rem; background: #e0f2fe; padding: 12px; border-radius: 8px; border-left: 4px solid var(--accent);">
+            🏃 <strong>Sprinter-Aufgabe:</strong> Vergleicht Marx mit Rousseau: Wo verortet Marx das wahre Wesen des Menschen?
+          </div>
+        </div>
+        <div class="card" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;">
+          <h3>📱 Digitale Hilfestellung</h3>
+          <p style="font-size: 0.95rem; color: var(--text-muted);">Glossar &amp; gestufte Hilfen:</p>
+          <a href="../digitale Hilfe/index.html" target="_blank" class="action-btn">
+            📖 Hilfestellung aufrufen
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOLIE 7: TAFELSICHERUNG (LEER / FREIRAUM) -->
+    <div class="slide">
+      <h2>🏛️ Sicherung: Die 4 Dimensionen der Entfremdung</h2>
+      <div style="margin-top: 20px; border: 2px dashed #cbd5e1; border-radius: 12px; height: 75%; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-style: italic; font-size: 1.2rem;">
+        [Freiraum für gemeinsame Notizen &amp; Tafelbild / Smartboard]
+      </div>
+    </div>
+
+    <!-- FOLIE 8: 5. ADVANCED ORGANIZER -->
+    <div class="slide">
+      <h2>🧭 5. Synthese: Marx im Advanced Organizer</h2>
+      <div class="grid-2" style="margin-top: 10px;">
+        <div>
+          <h3>Syntheseaufgabe:</h3>
+          <p><strong>a) Marx in einem Satz:</strong><br>
+          Formuliert Marx' Kulturdiagnose pointiert in einem Satz.</p>
+          <br>
+          <p><strong>b) Advanced Organizer:</strong><br>
+          Verortet Marx begründet im Spannungsfeld: <strong>Visitenkarte oder Trugbild?</strong></p>
+          <div style="margin-top: 20px; color: var(--text-muted); font-size: 1.05rem;">
+            ⏱️ <strong>Zeit:</strong> ca. 8–10 Min. | 👥 <strong>Sozialform:</strong> Partnerarbeit
+          </div>
+        </div>
+        <div class="card" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;">
+          <h3>Digitaler Advanced Organizer</h3>
+          <p style="font-size: 0.95rem; color: var(--text-muted);">Verortet Marx im digitalen Schaubild:</p>
+          <a href="../../AO/index.html" target="_blank" class="action-btn">
+            🧭 AO öffnen &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOLIE 9: 6. TRANSFER: MEME -->
+    <div class="slide">
+      <h2>🎨 6. Transfer: Marx' Kritik im Meme</h2>
+      <div class="card" style="margin-top: 10px;">
+        <h3>Aufgabe (Transfer):</h3>
+        <p style="font-size: 1.2rem;">Stellt Karl Marx' Kritik der entfremdeten Arbeit in einem <strong>pointierten Meme</strong> dar!</p>
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 6px;">Wählt eine freie Vorlage im Generator (oder nutzt alternativ die Comic-Vorlage auf Papier).</p>
+      </div>
+
+      <div class="grid-2" style="margin-top: 16px;">
+        <div class="card">
+          <h3>💡 Mögliche Schwerpunkte:</h3>
+          <ul style="font-size: 1.05rem; margin-top: 8px;">
+            <li>Das Feierabend-Paradoxon (Tier vs. Mensch)</li>
+            <li>Wer beherrscht wen: Mensch vs. Maschine</li>
+            <li>Freies Schöpfertum vs. Zwangsarbeit</li>
+            <li>Chaplin am Fließband vs. freie Arbeit</li>
+          </ul>
+        </div>
+
+        <div class="card" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;">
+          <h3>📱 Meme-Generator</h3>
+          <p style="font-size: 0.95rem; color: var(--text-muted);">Freier Online-Generator:</p>
+          <a href="https://imageresizer.com/de/meme-generator" target="_blank" class="action-btn" style="font-size: 1.1rem; padding: 12px 24px;">
+            🎨 Meme-Generator öffnen &rarr;
+          </a>
+          <span style="font-size: 0.9rem; color: var(--text-muted);">⏱️ Zeit: ca. 15 Min. | 👥 EA / PA</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOLIE 10: 7. CHECK-OUT -->
+    <div class="slide">
+      <h2>✅ 7. Check-Out</h2>
+      <div style="display: flex; flex-direction: column; gap: 24px; margin-top: 24px;">
+        <div class="card" style="border-left: 6px solid #eab308;">
+          <h3 style="color: #a16207; font-size: 1.35rem;">💡 1. Ich weiß jetzt ...</h3>
+        </div>
+        <div class="card" style="border-left: 6px solid #3b82f6;">
+          <h3 style="color: #1d4ed8; font-size: 1.35rem;">🧠 2. Besonders spannend fand ich heute ...</h3>
+        </div>
+        <div class="card" style="border-left: 6px solid #10b981;">
+          <h3 style="color: #047857; font-size: 1.35rem;">❓ 3. Diese Frage nehme ich mit ...</h3>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bar">
+    <button class="nav-btn" onclick="prevSlide()">&#8592; Zurück</button>
+    <div class="slide-counter" id="counter">Folie 1 / 10</div>
+    <button class="nav-btn" onclick="nextSlide()">Weiter &#8594;</button>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+    const counter = document.getElementById("counter");
+
+    function updateSlides() {
+      slides.forEach((s, idx) => s.classList.toggle("active", idx === currentSlide));
+      counter.textContent = `Folie ${currentSlide + 1} / ${slides.length}`;
+    }
+
+    function nextSlide() {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        updateSlides();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlides();
+      }
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === " " || e.key === "PageDown") nextSlide();
+      if (e.key === "ArrowLeft" || e.key === "PageUp") prevSlide();
+    });
+  </script>
+</body>
+</html>

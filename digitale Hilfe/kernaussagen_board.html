@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karl Marx – Kernaussagen anordnen</title>
+  <style>
+    :root {
+      --primary: #143264;
+      --primary-dark: #0a1931;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --bg: #f1f5f9;
+      --card-bg: #ffffff;
+      --slot-bg: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --border: #cbd5e1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
+
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 14px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .header-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .banner {
+      background: #ffffff;
+      border-bottom: 2px solid var(--border);
+      padding: 12px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary);
+      gap: 8px;
+    }
+
+    .main-container {
+      flex: 1;
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 1700px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .board-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .slot {
+      background: var(--slot-bg);
+      border: 3px dashed var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      min-height: 520px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .slot.drag-over {
+      background: #dbeafe;
+      border-color: var(--accent);
+      transform: scale(1.02);
+    }
+
+    .slot-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .slot-number {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .slot-indicator {
+      background: var(--primary);
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .arrow-icon {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      border: 2px solid #e2e8f0;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      cursor: grab;
+      user-select: none;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .card:active {
+      cursor: grabbing;
+    }
+
+    .card.dragging {
+      opacity: 0.4;
+      transform: scale(0.96);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .card-badge {
+      background: #eff6ff;
+      color: var(--accent);
+      border: 1px solid #bfdbfe;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 4px 12px;
+      border-radius: 6px;
+    }
+
+    .card-badge.hidden {
+      display: none;
+    }
+
+    .drag-handle {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      cursor: grab;
+    }
+
+    .card-quote {
+      font-size: 1.3rem;
+      line-height: 1.55;
+      color: #1e293b;
+      font-style: italic;
+      flex: 1;
+    }
+
+    .card-bottom {
+      margin-top: 20px;
+      padding-top: 14px;
+      border-top: 1px solid #f1f5f9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .author-tag {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .move-buttons {
+      display: flex;
+      gap: 6px;
+    }
+
+    .btn-move {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: var(--primary);
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+    }
+
+    .btn-move:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .btn-move:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      background: #f1f5f9;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 1100px) {
+      .board-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .slot {
+        min-height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-title">
+      <span>Karl Marx: Die entfremdete Arbeit (1844)</span>
+      <span class="badge">Philosophie Q1 &bull; Herr Dayi</span>
+    </div>
+    <div class="header-actions">
+      <button class="btn" onclick="toggleBadges()" id="toggleBadgesBtn">
+        👁️ Buchstaben ausblenden
+      </button>
+      <button class="btn" onclick="shuffleCards()">
+        🔀 Mischen
+      </button>
+      <button class="btn" onclick="toggleFullscreen()">
+        ⛶ Vollbild
+      </button>
+    </div>
+  </header>
+
+  <div class="banner">
+    <span>💡 <strong>Arbeitsauftrag:</strong> In welcher logischen Reihenfolge stehen die vier Aussagen? (Ursache &rarr; Folge)</span>
+  </div>
+
+  <div class="main-container">
+    <div class="board-grid" id="boardGrid">
+      <!-- 4 Slots werden per JS gerendert -->
+    </div>
+  </div>
+
+  <script>
+    const statements = [
+      {
+        id: "A",
+        letter: "Satz A",
+        quote: "„Das Tier produziert nur unter der Herrschaft des physischen Bedürfnisses, während der Mensch frei produziert und erst wahrhaft produziert in der Freiheit […] der Mensch formiert daher auch nach den Gesetzen der Schönheit.“"
+      },
+      {
+        id: "B",
+        letter: "Satz B",
+        quote: "„Was das Produkt seiner Arbeit ist, ist er nicht. Je mehr Gegenstände der Arbeiter produziert, um so mehr gerät er unter die Herrschaft seines Produkts, des Kapitals.“"
+      },
+      {
+        id: "C",
+        letter: "Satz C",
+        quote: "„Seine Arbeit ist daher nicht freiwillig, sondern gezwungen, Zwangsarbeit. Sie ist nicht die Befriedigung eines Bedürfnisses, sondern nur ein Mittel, um Bedürfnisse außer ihr zu befriedigen.“"
+      },
+      {
+        id: "D",
+        letter: "Satz D",
+        quote: "„Es kommt daher zum Resultat, dass der Mensch sich nur mehr in seinen tierischen Funktionen (Essen, Trinken, Zeugen) als freitätig fühlt und in seinen menschlichen Funktionen nur mehr als Tier.“"
+      }
+    ];
+
+    // Aktuelle Reihenfolge der Statements (initially shuffled)
+    let currentOrder = [1, 2, 0, 3]; // bewusst gemischt gestartet
+    let showBadges = true;
+
+    function renderBoard() {
+      const grid = document.getElementById("boardGrid");
+      grid.innerHTML = "";
+
+      for (let slotIndex = 0; slotIndex < 4; slotIndex++) {
+        const stmtIndex = currentOrder[slotIndex];
+        const stmt = statements[stmtIndex];
+
+        const slotEl = document.createElement("div");
+        slotEl.className = "slot";
+        slotEl.dataset.slot = slotIndex;
+
+        // Slot Drag Events
+        slotEl.addEventListener("dragover", handleDragOver);
+        slotEl.addEventListener("dragleave", handleDragLeave);
+        slotEl.addEventListener("drop", handleDrop);
+
+        // Header
+        const slotHeader = document.createElement("div");
+        slotHeader.className = "slot-header";
+        slotHeader.innerHTML = `
+          <div class="slot-number">
+            <span class="slot-indicator">${slotIndex + 1}</span>
+            <span>Position ${slotIndex + 1}</span>
+          </div>
+          <span class="arrow-icon">${slotIndex < 3 ? "➔" : "🏁"}</span>
+        `;
+        slotEl.appendChild(slotHeader);
+
+        // Card
+        const cardEl = document.createElement("div");
+        cardEl.className = "card";
+        cardEl.draggable = true;
+        cardEl.dataset.slotIndex = slotIndex;
+
+        cardEl.addEventListener("dragstart", handleDragStart);
+        cardEl.addEventListener("dragend", handleDragEnd);
+
+        cardEl.innerHTML = `
+          <div class="card-top">
+            <span class="card-badge ${showBadges ? "" : "hidden"}">${stmt.letter}</span>
+            <span class="drag-handle" title="Ziehen zum Verschieben">⠿</span>
+          </div>
+          <div class="card-quote">${stmt.quote}</div>
+          <div class="card-bottom">
+            <span class="author-tag">Karl Marx (1844)</span>
+            <div class="move-buttons">
+              <button class="btn-move" onclick="moveCard(${slotIndex}, -1)" ${slotIndex === 0 ? "disabled" : ""} title="Nach links">◀</button>
+              <button class="btn-move" onclick="moveCard(${slotIndex}, 1)" ${slotIndex === 3 ? "disabled" : ""} title="Nach rechts">▶</button>
+            </div>
+          </div>
+        `;
+
+        slotEl.appendChild(cardEl);
+        grid.appendChild(slotEl);
+      }
+    }
+
+    // Move Card left/right by buttons
+    function moveCard(fromSlot, direction) {
+      const toSlot = fromSlot + direction;
+      if (toSlot < 0 || toSlot > 3) return;
+
+      const temp = currentOrder[fromSlot];
+      currentOrder[fromSlot] = currentOrder[toSlot];
+      currentOrder[toSlot] = temp;
+
+      renderBoard();
+    }
+
+    // Drag & Drop
+    let draggedSlotIndex = null;
+
+    function handleDragStart(e) {
+      draggedSlotIndex = parseInt(this.dataset.slotIndex);
+      this.classList.add("dragging");
+      e.dataTransfer.effectAllowed = "move";
+      e.dataTransfer.setData("text/plain", draggedSlotIndex);
+    }
+
+    function handleDragEnd(e) {
+      this.classList.remove("dragging");
+      document.querySelectorAll(".slot").forEach(s => s.classList.remove("drag-over"));
+    }
+
+    function handleDragOver(e) {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = "move";
+      this.classList.add("drag-over");
+    }
+
+    function handleDragLeave(e) {
+      this.classList.remove("drag-over");
+    }
+
+    function handleDrop(e) {
+      e.preventDefault();
+      this.classList.remove("drag-over");
+      const targetSlotIndex = parseInt(this.dataset.slot);
+
+      if (draggedSlotIndex !== null && draggedSlotIndex !== targetSlotIndex) {
+        const temp = currentOrder[draggedSlotIndex];
+        currentOrder[draggedSlotIndex] = currentOrder[targetSlotIndex];
+        currentOrder[targetSlotIndex] = temp;
+        renderBoard();
+      }
+    }
+
+    // Shuffle
+    function shuffleCards() {
+      for (let i = currentOrder.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentOrder[i], currentOrder[j]] = [currentOrder[j], currentOrder[i]];
+      }
+      renderBoard();
+    }
+
+    // Toggle Badges
+    function toggleBadges() {
+      showBadges = !showBadges;
+      const btn = document.getElementById("toggleBadgesBtn");
+      btn.textContent = showBadges ? "👁️ Buchstaben ausblenden" : "👁️ Buchstaben einblenden";
+      renderBoard();
+    }
+
+    // Fullscreen
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    // Initial render
+    renderBoard();
+  </script>
+</body>
+</html>

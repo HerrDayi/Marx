@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karl Marx: Die entfremdete Arbeit (1844) – Digitale Lernumgebung</title>
+    <!-- Google Fonts: Carlito (metric-compatible drop-in for Calibri) & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+    <div class="app-container">
+
+        <!-- Top App Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <span class="badge">Philosophie Q1</span>
+                <span class="instructor">Herr Dayi</span>
+                <span class="topic-tag">Anthropologie &amp; Kultur (IF 3)</span>
+            </div>
+            <div class="header-center">
+                <h1 class="header-title">Karl Marx – Die entfremdete Arbeit (1844)</h1>
+            </div>
+            <div class="header-right">
+                <div class="control-group">
+                    <button id="btn-text-decrease" class="icon-btn" title="Schriftgröße verkleinern" aria-label="Schrift verkleinern">A-</button>
+                    <button id="btn-text-increase" class="icon-btn" title="Schriftgröße vergrößern" aria-label="Schrift vergrößern">A+</button>
+                </div>
+                <div class="divider"></div>
+                <button id="btn-theme-toggle" class="theme-toggle-btn" title="Farbschema wechseln" aria-label="Farbschema wechseln">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <span id="theme-text">Dunkelmodus</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Schnell-Download-Leiste -->
+        <nav class="quick-downloads-bar" aria-label="Schnell-Downloads">
+            <span style="font-weight: 700; color: var(--primary-blue); font-size: 0.85rem; margin-right: 4px;">📥 Materialien:</span>
+            <a href="Arbeitsblatt_Marx.pdf" download class="dl-chip" title="Arbeitsblatt herunterladen">
+                📄 Arbeitsblatt (PDF)
+            </a>
+            <a href="Comic_Vorlage_Marx.pdf" download class="dl-chip" title="Comic-Vorlage herunterladen">
+                🎨 Comic-Vorlage (PDF)
+            </a>
+            <a href="https://herrdayi.github.io/Anordnung/" target="_blank" rel="noopener noreferrer" class="dl-chip" title="Zum interaktiven Anordnungs-Board für den Beamer">
+                🎯 Anordnungs-Board ↗
+            </a>
+            <a href="https://herrdayi.github.io/AO/" target="_blank" rel="noopener noreferrer" class="dl-chip ao" title="Zum digitalen Advanced Organizer">
+                🧭 Advanced Organizer ↗
+            </a>
+        </nav>
+
+        <!-- Top Navigation (2 Tabs analog zu Freud) -->
+        <nav class="top-chapter-nav" aria-label="Navigation">
+            <button class="chap-tab-btn active" data-chap-tab="text">
+                <span class="step-num">Tab 1</span>
+                <span class="step-label">📖 Text &amp; Begriffserklärungen</span>
+            </button>
+            <button class="chap-tab-btn" data-chap-tab="hilfe">
+                <span class="step-num">Tab 2</span>
+                <span class="step-label">💡 Funktionen-Pool &amp; Strukturhilfe</span>
+            </button>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="app-content-full">
+
+            <!-- =============================================================== -->
+            <!-- TAB 1: TEXT & BEGRIFFSERKLÄRUNGEN                               -->
+            <!-- =============================================================== -->
+            <div class="chap-panel active" id="chap-panel-text">
+
+                <!-- Sticky Glossar Card -->
+                <div class="card vocab-card-horizontal" id="vocab-card">
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                            <h2>Begriffserklärungen &amp; Philosophische Leitbegriffe</h2>
+                        </div>
+                        <span class="vocab-hint-badge">Klick auf blau markierte Begriffe im Text</span>
+                    </div>
+                    <div class="card-body">
+                        <div id="vocab-placeholder" class="placeholder-box">
+                            Klicke auf einen <span class="vocab-inline-example">blau unterstrichenen Fachbegriff</span> im Text oder im Begriffspool, um die Erklärung und Marx' Argumentationszusammenhang einzublenden.
+                        </div>
+                        <div id="vocab-content" class="vocab-display hidden">
+                            <div class="vocab-header-row">
+                                <h3 id="vocab-title" class="vocab-title">Begriff</h3>
+                                <span id="vocab-type" class="vocab-type">Kategorie</span>
+                            </div>
+                            <p id="vocab-definition" class="vocab-definition">Erklärung...</p>
+                            <div class="vocab-context-box">
+                                <strong>Marx' Argumentationsgang &amp; Kontext:</strong>
+                                <p id="vocab-context">Kontext...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interaktiver Schalter für Sinnabschnitte & Zwischenüberschriften -->
+                <div class="scaffolding-box">
+                    <div class="scaffolding-header">
+                        <label class="toggle-wrapper" for="toggle-sections">
+                            <span class="switch">
+                                <input type="checkbox" id="toggle-sections">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="toggle-label"><strong>Sinnabschnitte &amp; Zwischenüberschriften anzeigen</strong> (Gliederungshilfe)</span>
+                        </label>
+                        <span class="scaffolding-hint">💡 Auf dem Arbeitsblatt für die eigene Textanalyse weggelassen – hier interaktiv zuschaltbar!</span>
+                    </div>
+                    
+                    <div id="sections-overview" class="sections-overview hidden">
+                        <div class="section-badge-item sec-1">
+                            <span class="badge-tag">Abschnitt 1 · Zeilen 1–7</span>
+                            <span class="badge-title">I. Anthropologisches Ideal: Das Gattungswesen und freie Produktion</span>
+                            <p class="badge-desc">Der Mensch beweist sich als Gattungswesen durch universelle, bewusste und freie Gestaltung der Natur nach den Gesetzen der Schönheit – im scharfen Kontrast zur einseitigen Tierproduktion.</p>
+                        </div>
+                        <div class="section-badge-item sec-2">
+                            <span class="badge-tag">Abschnitt 2 · Zeilen 8–17</span>
+                            <span class="badge-title">II. Entfremdung vom Produkt: Vergegenständlichung und Herrschaft des Kapitals</span>
+                            <p class="badge-desc">Die Arbeit materialisiert sich im Gegenstand (Vergegenständlichung). Im Kapitalismus schlägt dies in Entfremdung um: Das eigene Werk wird zur fremden, feindlichen Macht (Kapital), die den Arbeiter knechtet.</p>
+                        </div>
+                        <div class="section-badge-item sec-3">
+                            <span class="badge-tag">Abschnitt 3 · Zeilen 18–26</span>
+                            <span class="badge-title">III. Entfremdung von der Tätigkeit: Zwangsarbeit und Kasteiung</span>
+                            <p class="badge-desc">Die Arbeit gehört nicht zum Wesen des Arbeiters, sondern ist äußere Zwangsarbeit. Sie verneint das Subjekt, kasteit die Physis und ruiniert den Geist. Arbeit wird zum bloßen Mittel des nackten Überlebens.</p>
+                        </div>
+                        <div class="section-badge-item sec-4">
+                            <span class="badge-tag">Abschnitt 4 · Zeilen 27–31</span>
+                            <span class="badge-title">IV. Das anthropologische Paradoxon: Die Verkehrung von Mensch und Tier</span>
+                            <p class="badge-desc">Die absurde Umkehrung menschlicher Existenz: Der Mensch fühlt sich nur noch bei tierischen Triebhandlungen (Essen, Trinken, Zeugen) frei – in seiner menschlichen Arbeit hingegen nur noch wie ein Tier.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Textbereich mit zuschaltbaren Überschriften und Zeilennummern (analog zu Freud) -->
+                <article class="philosophical-text">
+                    
+                    <!-- Zwischenüberschrift 1 (zuschaltbar) -->
+                    <div class="section-heading-wrapper hidden" data-section="1">
+                        <span class="section-chip">Abschnitt 1 · Z. 1–7</span>
+                        <h3 class="section-heading">I. Anthropologisches Ideal: Das Gattungswesen und freie Produktion</h3>
+                    </div>
+                    <div class="text-paragraph" data-sec-p="1">
+                        <span class="line-counter">1<br>5</span>
+                        „Das praktische Erzeugen einer gegenständlichen Welt, die Bearbeitung der unorganischen Natur ist die Bewährung des Menschen als eines bewussten <span class="vocab-term" data-term="Gattungswesen">Gattungswesens</span> […]. Zwar produziert auch das Tier. Es baut sich ein Nest, Wohnungen, wie die Biene, Biber, Ameise etc. Allein es produziert nur, was es unmittelbar für sich bedarf; es produziert <span class="vocab-term" data-term="Universelle vs. einseitige Produktion">einseitig, während der Mensch universell produziert</span>; das Tier produziert nur unter der Herrschaft des physischen Bedürfnisses, während der Mensch frei produziert und erst wahrhaft produziert in der Freiheit […] der Mensch formiert daher auch nach den <span class="vocab-term" data-term="Gesetze der Schönheit">Gesetzen der Schönheit</span>.“
+                    </div>
+
+                    <!-- Zwischenüberschrift 2 (zuschaltbar) -->
+                    <div class="section-heading-wrapper hidden" data-section="2">
+                        <span class="section-chip">Abschnitt 2 · Z. 8–17</span>
+                        <h3 class="section-heading">II. Entfremdung vom Produkt: Vergegenständlichung und Herrschaft des Kapitals</h3>
+                    </div>
+                    <div class="text-paragraph" data-sec-p="2">
+                        <span class="line-counter">10<br>15</span>
+                        „Der Gegenstand, den die Arbeit produziert, ihr Produkt, tritt ihr als ein fremdes Wesen, als eine von dem Produzenten unabhängige Macht gegenüber. Das Produkt der Arbeit ist die Arbeit, die sich in einem Gegenstand fixiert, sachlich gemacht hat, es ist die <span class="vocab-term" data-term="Vergegenständlichung (Objektivierung)">Vergegenständlichung der Arbeit</span>. Die Verwirklichung der Arbeit ist ihre Vergegenständlichung. Diese Verwirklichung der Arbeit erscheint in dem nationalökonomischen Zustand als Entwirklichung des Arbeiters, die Vergegenständlichung als Verlust und Knechtschaft des Gegenstandes, die Aneignung als <span class="vocab-term" data-term="Entfremdung &amp; Entäußerung">Entfremdung, als Entäußerung</span>. […] Die Aneignung des Gegenstandes erscheint so sehr als Entfremdung, dass, je mehr Gegenstände der Arbeiter produziert, um so mehr gerät er unter die <span class="vocab-term" data-term="Herrschaft des Kapitals">Herrschaft seines Produkts, des Kapitals</span>. Was das Produkt seiner Arbeit ist, ist er nicht. Je größer also dies Produkt, je weniger ist er selbst.“
+                    </div>
+
+                    <!-- Zwischenüberschrift 3 (zuschaltbar) -->
+                    <div class="section-heading-wrapper hidden" data-section="3">
+                        <span class="section-chip">Abschnitt 3 · Z. 18–26</span>
+                        <h3 class="section-heading">III. Entfremdung von der Tätigkeit: Zwangsarbeit und Kasteiung</h3>
+                    </div>
+                    <div class="text-paragraph" data-sec-p="3">
+                        <span class="line-counter">20<br>25</span>
+                        „Worin besteht nun die <span class="vocab-term" data-term="Entfremdung &amp; Entäußerung">Entäußerung der Arbeit</span>? Erstens, dass die Arbeit dem Arbeiter äußerlich ist, d. h. nicht zu seinem Wesen gehört, dass er sich daher in seiner Arbeit nicht bejaht, sondern verneint, nicht wohl, sondern unglücklich fühlt, keine freie physische und geistige Energie entwickelt, sondern seine <span class="vocab-term" data-term="Kasteiung der Physis &amp; Ruin des Geistes">Physis kasteit und seinen Geist ruiniert</span>. Der Arbeiter fühlt sich daher erst außer der Arbeit und in der Arbeit außer sich. Zu Hause ist er, wenn er nicht arbeitet, und wenn er arbeitet, ist er nicht zu Hause. Seine Arbeit ist daher nicht freiwillig, sondern gezwungen, <span class="vocab-term" data-term="Zwangsarbeit">Zwangsarbeit</span>. Sie ist nicht die Befriedigung eines Bedürfnisses, sondern nur ein Mittel, um Bedürfnisse außer ihr zu befriedigen. Ihre Fremdheit tritt dadurch rein hervor, dass, sobald kein physischer oder sonstiger Zwang existiert, die Arbeit wie eine Pest geflohen wird.“
+                    </div>
+
+                    <!-- Zwischenüberschrift 4 (zuschaltbar) -->
+                    <div class="section-heading-wrapper hidden" data-section="4">
+                        <span class="section-chip">Abschnitt 4 · Z. 27–31</span>
+                        <h3 class="section-heading">IV. Das anthropologische Paradoxon: Die Verkehrung von Mensch und Tier</h3>
+                    </div>
+                    <div class="text-paragraph" data-sec-p="4">
+                        <span class="line-counter">30</span>
+                        „Es kommt daher zum Resultat, dass der Mensch sich nur mehr in seinen <span class="vocab-term" data-term="Tierische vs. menschliche Funktionen">tierischen Funktionen (Essen, Trinken, Zeugen)</span> als freitätig fühlt und in seinen menschlichen Funktionen nur mehr als Tier. <span class="vocab-term" data-term="Anthropologisches Paradoxon">Das Tierische wird das Menschliche und das Menschliche das Tierische.</span> Essen, Trinken und Zeugen etc. sind zwar auch echt menschliche Funktionen. Aber in der Abstraktion, die sie von dem übrigen Kreis der menschlichen Betätigung trennt und zu letzten und einzigen Endzwecken macht, sind sie tierisch.“
+                    </div>
+
+                    <div class="text-source">
+                        <strong>Quelle:</strong> Karl Marx: <em>Ökonomisch-philosophische Manuskripte aus dem Jahre 1844</em>. Erstes Manuskript: <em>Die entfremdete Arbeit</em>. MEW Band 40, Berlin: Dietz Verlag 1968, S. 510–522. Didaktisch gekürzt.
+                    </div>
+                </article>
+            </div>
+
+            <!-- =============================================================== -->
+            <!-- TAB 2: FUNKTIONEN-POOL & STRUKTURHILFE                          -->
+            <!-- =============================================================== -->
+            <div class="chap-panel" id="chap-panel-hilfe">
+
+                <!-- Methodenkarte: Kernaussagen-Rekonstruktion -->
+                <div class="help-card featured">
+                    <div class="help-card-header">
+                        <span class="help-badge">Methodenkarte</span>
+                        <h2 class="help-card-title">Methode: Kernaussagen-Rekonstruktion &amp; Argumentationsgang</h2>
+                    </div>
+                    <div class="guide-desc">
+                        <strong>Ziel:</strong> Die isolierten Sätze wieder in den Gesamtzusammenhang des Textes einbetten und ihre argumentative Funktion aufdecken.
+                    </div>
+                    <div class="hierarchy-flow" style="margin-top: 8px;">
+                        <div class="flow-step">
+                            <span class="flow-step-num">Schritt 1 (Partnerarbeit / Kleingruppe)</span>
+                            <div class="flow-step-title">Kernaussage erschließen</div>
+                            <p class="flow-step-desc">Erklärt euren Satzstreifen in eigenen Worten und findet ein passendes Beispiel aus Alltag oder Arbeitswelt.</p>
+                        </div>
+                        <div class="flow-step">
+                            <span class="flow-step-num">Schritt 2 (Plenum / Beamer-Board)</span>
+                            <div class="flow-step-title">Hypothese zur Reihenfolge aufstellen</div>
+                            <p class="flow-step-desc">Ordnet die Thesen gemeinsam am Beamer in eine logische Ursache-Wirkungs-Kette und begründet eure Kurshypothese.</p>
+                        </div>
+                        <div class="flow-step">
+                            <span class="flow-step-num">Schritt 3 (Textabgleich &amp; Zeilennummern)</span>
+                            <div class="flow-step-title">Textlokalisierung &amp; Funktionen bestimmen</div>
+                            <p class="flow-step-desc">Sucht eure Zitate im Text (Seite 1), tragt die exakte Zeile ein und bestimmt die argumentative Funktion (Hilfe siehe Funktionspool unten).</p>
+                        </div>
+                        <div class="flow-step">
+                            <span class="flow-step-num">Schritt 4 (Kultur-Urteil)</span>
+                            <div class="flow-step-title">Synthese &amp; Reihenvergleich</div>
+                            <p class="flow-step-desc">Beurteilt das anthropologische Paradoxon (Satz D) vor dem Hintergrund von Gehlen (Entlastung) und Freud (Triebverzicht).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Funktionen-Pool: Stufenhilfe für die Tabelle -->
+                <div class="help-card">
+                    <div class="help-card-header">
+                        <span class="help-badge">Funktionen-Pool</span>
+                        <h3 class="help-card-title">Hilfe zur Tabelle: Die 4 argumentativen Funktionen der Sätze</h3>
+                    </div>
+                    <p class="guide-desc">
+                        Auf dem Arbeitsblatt ist der Funktionen-Pool bewusst weggelassen worden, damit ihr die Zusammenhänge selbst erarbeitet. Falls ihr Unterstützung braucht, seht ihr hier die 4 Funktionen im Überblick:
+                    </p>
+                    
+                    <div class="function-grid">
+                        
+                        <!-- Funktion 1 -->
+                        <div class="function-item">
+                            <div class="function-header">
+                                <span class="function-label">Anthropologische Grundlegung</span>
+                                <span class="function-sentence-badge">Satz A · Z. 1–7</span>
+                            </div>
+                            <div class="function-quote">
+                                „Das praktische Erzeugen einer gegenständlichen Welt […] ist die Bewährung des Menschen als eines bewussten Gattungswesens […]“
+                            </div>
+                            <p class="function-explanation">
+                                <strong>Funktion im Gedankengang:</strong> Definition des menschlichen Wesens als schöpferisch, bewusst und universell nach den Gesetzen der Schönheit. Dient als <em>positives normatives Ideal</em> und Ausgangspunkt der gesamten Kritik.
+                            </p>
+                            <div class="function-dimension">
+                                📌 <strong>Befund:</strong> Das unentfremdete Gattungswesen (Positives Ideal)
+                            </div>
+                        </div>
+
+                        <!-- Funktion 2 -->
+                        <div class="function-item">
+                            <div class="function-header">
+                                <span class="function-label">Mechanismus der Entfremdung</span>
+                                <span class="function-sentence-badge">Satz B · Z. 8–17</span>
+                            </div>
+                            <div class="function-quote">
+                                „Der Gegenstand, den die Arbeit produziert […] tritt ihr als ein fremdes Wesen […] gegenüber […] je mehr Gegenstände der Arbeiter produziert, um so mehr gerät er unter die Herrschaft seines Produkts, des Kapitals.“
+                            </div>
+                            <p class="function-explanation">
+                                <strong>Funktion im Gedankengang:</strong> Kausale Herleitung der materiellen Enteignung: Die Vergegenständlichung schlägt im Kapitalismus in Enteignung um; das tote Werk verselbstständigt sich und knechtet den lebendigen Schöpfer.
+                            </p>
+                            <div class="function-dimension">
+                                📌 <strong>Befund:</strong> 1. Dimension – Entfremdung vom Arbeitsprodukt
+                            </div>
+                        </div>
+
+                        <!-- Funktion 3 -->
+                        <div class="function-item">
+                            <div class="function-header">
+                                <span class="function-label">Kausale Wesensbestimmung</span>
+                                <span class="function-sentence-badge">Satz C · Z. 18–26</span>
+                            </div>
+                            <div class="function-quote">
+                                „Die Arbeit ist dem Arbeiter äußerlich […] dass er sich daher in seiner Arbeit nicht bejaht, sondern verneint […] seine Physis kasteit und seinen Geist ruiniert […] Seine Arbeit ist daher […] Zwangsarbeit.“
+                            </div>
+                            <p class="function-explanation">
+                                <strong>Funktion im Gedankengang:</strong> Phänomenologische Wirkungsanalyse auf Körper und Geist: Unfreie Lohnarbeit ist keine Selbstverwirklichung, sondern zerstörerische Zwangsarbeit zur bloßen Existenzsicherung.
+                            </p>
+                            <div class="function-dimension">
+                                📌 <strong>Befund:</strong> 2. Dimension – Entfremdung von der Tätigkeit
+                            </div>
+                        </div>
+
+                        <!-- Funktion 4 -->
+                        <div class="function-item">
+                            <div class="function-header">
+                                <span class="function-label">Anthropologisches Paradoxon</span>
+                                <span class="function-sentence-badge">Satz D · Z. 27–31</span>
+                            </div>
+                            <div class="function-quote">
+                                „Es kommt daher zum Resultat, dass der Mensch sich nur mehr in seinen tierischen Funktionen […] als freitätig fühlt und in seinen menschlichen Funktionen nur mehr als Tier. Das Tierische wird das Menschliche und das Menschliche das Tierische.“
+                            </div>
+                            <p class="function-explanation">
+                                <strong>Funktion im Gedankengang:</strong> Dialektische Zuspitzung und Schlusspointe des Arguments: Vollständige Verkehrung des Menschseins – Freiheit wird nur noch im Biologischen empfunden, die schöpferische Arbeit zur tierischen Plackerei.
+                            </p>
+                            <div class="function-dimension">
+                                📌 <strong>Befund:</strong> 3. Dimension – Entfremdung vom Gattungswesen &amp; Verkehrung
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Stufenhilfe: Begriffspool -->
+                <div class="help-card">
+                    <div class="help-card-header">
+                        <span class="help-badge">Wortspeicher</span>
+                        <h3 class="help-card-title">Begriffspool (Klick zum Nachschlagen im Glossar)</h3>
+                    </div>
+                    <p class="guide-desc">Klicke auf einen Begriff, um direkt zur Erklärung und zum Kontext in Tab 1 zu springen:</p>
+                    <div class="tag-cloud">
+                        <span class="term-tag core" data-term="Gattungswesen">Gattungswesen (!)</span>
+                        <span class="term-tag" data-term="Universelle vs. einseitige Produktion">Universelle vs. einseitige Produktion</span>
+                        <span class="term-tag core" data-term="Gesetze der Schönheit">Gesetze der Schönheit (!)</span>
+                        <span class="term-tag core" data-term="Vergegenständlichung (Objektivierung)">Vergegenständlichung (!)</span>
+                        <span class="term-tag core" data-term="Entfremdung &amp; Entäußerung">Entfremdung &amp; Entäußerung (!)</span>
+                        <span class="term-tag core" data-term="Herrschaft des Kapitals">Herrschaft des Kapitals (!)</span>
+                        <span class="term-tag core" data-term="Kasteiung der Physis &amp; Ruin des Geistes">Kasteiung der Physis &amp; Ruin des Geistes (!)</span>
+                        <span class="term-tag core" data-term="Zwangsarbeit">Zwangsarbeit (!)</span>
+                        <span class="term-tag core" data-term="Anthropologisches Paradoxon">Anthropologisches Paradoxon (!)</span>
+                        <span class="term-tag" data-term="Tierische vs. menschliche Funktionen">Tierische vs. menschliche Funktionen</span>
+                    </div>
+                </div>
+
+                <!-- Verknüpfung zum Advanced Organizer -->
+                <div class="ao-banner">
+                    <div class="ao-banner-content">
+                        <h3 style="color: var(--primary-blue); font-size: 1.05rem; margin-bottom: 6px;">🧭 Reihenkontext: Der Advanced Organizer</h3>
+                        <p style="font-size: 0.85rem; line-height: 1.5; color: var(--text-secondary);">
+                            Vergleicht die drei Positionen unserer Reihe: Während <strong>Gehlen</strong> Kultur als schützende Entlastung begreift und <strong>Freud</strong> die seelischen Kosten des Triebverzichts aufdeckt, entlarvt <strong>Marx</strong> die kapitalistische Arbeit als Zerstörung des menschlichen Gattungswesens.
+                        </p>
+                    </div>
+                    <a href="https://herrdayi.github.io/AO/" target="_blank" rel="noopener noreferrer" class="ao-btn">
+                        🧭 Zum Advanced Organizer ↗
+                    </a>
+                </div>
+
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Philosophie Q1 • Unterrichtsreihe: Philosophische Anthropologie &amp; Kulturphilosophie • Gymnasium</p>
+            <p><small>Texte nach Karl Marx (1844). Didaktisch aufbereitet von Herrn Dayi.</small></p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+\documentclass[a4paper, 10pt, landscape]{scrartcl}
+
+% ============================================================
+% PRÄAMBEL & LAYOUT (Design Herr Dayi - Comic-Vorlage)
+% ============================================================
+\usepackage[a4paper, landscape, top=0.9cm, bottom=0.9cm, left=1.2cm, right=1.2cm]{geometry}
+\usepackage[ngerman]{babel}
+\usepackage{libertinus}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{tabularx}
+\usepackage{tikz}
+
+\pagestyle{empty}
+
+% Farbdefinitionen
+\definecolor{primaryBlue}{RGB}{20, 50, 100}
+\definecolor{lightBlue}{RGB}{245, 248, 253}
+\definecolor{accentOrange}{RGB}{220, 100, 30}
+\definecolor{panelBorder}{RGB}{180, 195, 215}
+
+\begin{document}
+
+% === KOPFZEILE ===
+\noindent
+\begin{minipage}[t]{0.32\textwidth}
+    {\small\textbf{Philosophie Q1} \enskip$\cdot$\enskip Herr Dayi}
+\end{minipage}%
+\begin{minipage}[t]{0.36\textwidth}
+    \centering{\small\textbf{Anthropologie \& Kultur (IF 3)}}
+\end{minipage}%
+\begin{minipage}[t]{0.32\textwidth}
+    \flushright{\small Name: \rule{3.2cm}{0.4pt} \enskip Datum: \rule{1.8cm}{0.4pt}}
+\end{minipage}
+
+\vspace{0.12cm}
+{\color{primaryBlue}\hrule height 1pt}
+\vspace{0.18cm}
+
+% === TITEL & ARBEITSAUFTRAG ===
+\noindent
+\begin{tcolorbox}[
+    enhanced,
+    colback=lightBlue,
+    colframe=primaryBlue,
+    boxrule=0.8pt,
+    arc=1.5mm,
+    top=4pt, bottom=4pt, left=8pt, right=8pt
+]
+\noindent
+{\large\bfseries\color{primaryBlue} Comic-Strip: Die Entfremdung des Menschen -- Von Chaplin bis heute}\\[2pt]
+\footnotesize\sffamily
+\textbf{Arbeitsauftrag:} Stellt Karl Marx' Diagnose der entfremdeten Arbeit in einem \textbf{4-teiligen Comic-Strip} dar (einfache Strichmännchen genügen vollkommen!). Zeichnet die Verwandlung des Menschen vom freien Schöpfer zum fremdbestimmten Rädchen im Getriebe. Nutzt \textbf{Sprech- und Denkblasen}, Symbole und pointierte Alltagsszenen.
+\end{tcolorbox}
+
+\vspace{0.18cm}
+
+% === 4 COMIC PANELS (NEBENEINANDER) ===
+\noindent
+\begin{minipage}[t]{0.238\textwidth}
+    % PANEL 1
+    \begin{tcolorbox}[
+        enhanced,
+        colback=white,
+        colframe=primaryBlue,
+        boxrule=1.2pt,
+        arc=2mm,
+        height=13.6cm,
+        top=5pt, bottom=5pt, left=6pt, right=6pt,
+        title={\footnotesize\bfseries\color{white} 1. Das Gattungswesen (Ideal)},
+        boxed title style={colback=primaryBlue, arc=1mm, boxrule=0pt}
+    ]
+        \scriptsize
+        \textit{\glqq[\dots] während der Mensch frei produziert [\dots] nach den Gesetzen der Schönheit.\grqq}
+        \vspace{4pt}
+        {\color{primaryBlue!30}\hrule height 0.6pt}
+        
+        % Freier Zeichenbereich
+        \vspace{6pt}
+        \centering
+        \begin{tikzpicture}
+            % Vorgezeichnete Sprechblase als Impuls
+            \draw[gray!50, dashed, rounded corners=3mm, thick] (0, 0) rectangle (4.6, 1.4);
+            \node[gray!60, font=\tiny\sffamily] at (2.3, 0.7) {Sprech- oder Denkblase};
+        \end{tikzpicture}
+        
+        \vfill
+        
+        {\color{primaryBlue!30}\hrule height 0.6pt}
+        \vspace{3pt}
+        {\tiny\sffamily\color{primaryBlue}\textbf{Fokus:} Freie Gestaltung, Kunst, Sinn, Freude am Erschaffen}
+    \end{tcolorbox}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.238\textwidth}
+    % PANEL 2
+    \begin{tcolorbox}[
+        enhanced,
+        colback=white,
+        colframe=primaryBlue,
+        boxrule=1.2pt,
+        arc=2mm,
+        height=13.6cm,
+        top=5pt, bottom=5pt, left=6pt, right=6pt,
+        title={\footnotesize\bfseries\color{white} 2. Herrschaft des Produkts},
+        boxed title style={colback=primaryBlue, arc=1mm, boxrule=0pt}
+    ]
+        \scriptsize
+        \textit{\glqq Was das Produkt seiner Arbeit ist, ist er nicht. [\dots] Herrschaft des Kapitals.\grqq}
+        \vspace{4pt}
+        {\color{primaryBlue!30}\hrule height 0.6pt}
+        
+        % Freier Zeichenbereich
+        \vspace{6pt}
+        \centering
+        \begin{tikzpicture}
+            % Vorgezeichnete Sprechblase als Impuls
+            \draw[gray!50, dashed, rounded corners=3mm, thick] (0, 0) rectangle (4.6, 1.4);
+            \node[gray!60, font=\tiny\sffamily] at (2.3, 0.7) {Chaplin-Ruf: \glqq Die Maschine \dots!\grqq};
+        \end{tikzpicture}
+        
+        \vfill
+        
+        {\color{primaryBlue!30}\hrule height 0.6pt}
+        \vspace{3pt}
+        {\tiny\sffamily\color{primaryBlue}\textbf{Fokus:} Die Maschine / das Ding beherrscht den Arbeiter}
+    \end{tcolorbox}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.238\textwidth}
+    % PANEL 3
+    \begin{tcolorbox}[
+        enhanced,
+        colback=white,
+        colframe=primaryBlue,
+        boxrule=1.2pt,
+        arc=2mm,
+        height=13.6cm,
+        top=5pt, bottom=5pt, left=6pt, right=6pt,
+        title={\footnotesize\bfseries\color{white} 3. Zwangsarbeit \& Kasteiung},
+        boxed title style={colback=primaryBlue, arc=1mm, boxrule=0pt}
+    ]
+        \scriptsize
+        \textit{\glqq In der Arbeit außer sich [\dots] keine freie Energie, sondern Kasteiung der Physis.\grqq}
+        \vspace{4pt}
+        {\color{primaryBlue!30}\hrule height 0.6pt}
+        
+        % Freier Zeichenbereich
+        \vspace{6pt}
+        \centering
+        \begin{tikzpicture}
+            % Vorgezeichnete Sprechblase als Impuls
+            \draw[gray!50, dashed, rounded corners=3mm, thick] (0, 0) rectangle (4.6, 1.4);
+            \node[gray!60, font=\tiny\sffamily] at (2.3, 0.7) {Gedanke: \glqq Wann ist Feierabend?\grqq};
+        \end{tikzpicture}
+        
+        \vfill
+        
+        {\color{primaryBlue!30}\hrule height 0.6pt}
+        \vspace{3pt}
+        {\tiny\sffamily\color{primaryBlue}\textbf{Fokus:} Monotonie, Stechuhr, Zwang, Erschöpfung}
+    \end{tcolorbox}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.238\textwidth}
+    % PANEL 4
+    \begin{tcolorbox}[
+        enhanced,
+        colback=white,
+        colframe=primaryBlue,
+        boxrule=1.2pt,
+        arc=2mm,
+        height=13.6cm,
+        top=5pt, bottom=5pt, left=6pt, right=6pt,
+        title={\footnotesize\bfseries\color{white} 4. Das Paradoxon (Feierabend)},
+        boxed title style={colback=primaryBlue, arc=1mm, boxrule=0pt}
+    ]
+        \scriptsize
+        \textit{\glqq In seinen tierischen Funktionen freitätig und in menschlichen nur mehr als Tier.\grqq}
+        \vspace{4pt}
+        {\color{primaryBlue!30}\hrule height 0.6pt}
+        
+        % Freier Zeichenbereich
+        \vspace{6pt}
+        \centering
+        \begin{tikzpicture}
+            % Vorgezeichnete Sprechblase als Impuls
+            \draw[gray!50, dashed, rounded corners=3mm, thick] (0, 0) rectangle (4.6, 1.4);
+            \node[gray!60, font=\tiny\sffamily] at (2.3, 0.7) {\glqq Endlich frei!\grqq{} (Couch / Burger)};
+        \end{tikzpicture}
+        
+        \vfill
+        
+        {\color{primaryBlue!30}\hrule height 0.6pt}
+        \vspace{3pt}
+        {\tiny\sffamily\color{primaryBlue}\textbf{Fokus:} Schein-Freiheit beim Essen, Trinken, Schlafen}
+    \end{tcolorbox}
+\end{minipage}
+
+\vspace{0.22cm}
+
+% === SCHLUSSZEILE: TITEL / POINTE DES COMICS ===
+\noindent
+\begin{tcolorbox}[
+    enhanced,
+    colback=white,
+    colframe=primaryBlue,
+    boxrule=0.8pt,
+    arc=1mm,
+    top=4pt, bottom=4pt, left=8pt, right=8pt
+]
+\small\sffamily
+\textbf{\color{primaryBlue}Titel oder Schlusspointe deines Comic-Strips:} \rule{19.5cm}{0.4pt}
+\end{tcolorbox}
+
+\end{document}
