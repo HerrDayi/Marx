@@ -14,11 +14,9 @@
 \exhyphenpenalty=10000
 
 \definecolor{primaryBlue}{RGB}{20, 50, 100}
-\definecolor{accentOrange}{RGB}{220, 100, 30}
 \definecolor{textDark}{RGB}{15, 23, 42}
-\definecolor{subtleGray}{RGB}{100, 116, 139}
 
-\newcommand{\aussagePlakat}[5]{%
+\newcommand{\aussagePlakat}[4]{%
     \noindent\begin{tcolorbox}[
         enhanced,
         colback=white,
@@ -29,31 +27,13 @@
         height=17.2cm,
         valign=center,
         halign=center,
-        top=0.6cm, bottom=0.6cm, left=1.0cm, right=1.0cm,
+        top=1.0cm, bottom=1.0cm, left=1.2cm, right=1.2cm,
         title={\LARGE\bfseries\color{white}\quad #1 \quad},
         attach boxed title to top center={yshift=-4.5mm},
-        boxed title style={colback=primaryBlue, arc=2mm, boxrule=0pt, left=10mm, right=10mm, top=2.8mm, bottom=2.8mm}
+        boxed title style={colback=primaryBlue, arc=2mm, boxrule=0pt, left=12mm, right=12mm, top=3mm, bottom=3mm}
     ]
-        \vspace{-0.1cm}
         {\fontsize{#2}{#3}\selectfont\bfseries\color{textDark}
         \glqq #4\grqq}
-        
-        \vfill
-        
-        \begin{tcolorbox}[
-            enhanced,
-            colback=white,
-            colframe=primaryBlue!30,
-            boxrule=1pt,
-            arc=2mm,
-            width=0.96\textwidth,
-            halign=center,
-            top=2.5mm, bottom=2.5mm
-        ]
-            {\normalsize\bfseries\color{primaryBlue}Philosophie Q1 \enskip$\cdot$\enskip Herr Dayi} 
-            \quad\textbar\quad 
-            {\normalsize\bfseries\color{subtleGray}#5}
-        \end{tcolorbox}
     \end{tcolorbox}
     \clearpage
 }
@@ -61,36 +41,36 @@
 \begin{document}
 
 % === AUSSAGE A ===
-\aussagePlakat{AUSSAGE A}{26pt}{38pt}{%
+\aussagePlakat{AUSSAGE A}{28pt}{42pt}{%
 Das Tier produziert nur unter der Herrschaft des physischen Bedürfnisses,\\
 während der Mensch frei produziert\\
 und erst wahrhaft produziert in der Freiheit [\dots]\\
 der Mensch formiert daher auch nach den Gesetzen der Schönheit.%
-}{Karl Marx: Ökonomisch-philosophische Manuskripte (1844)}
+}
 
 % === AUSSAGE B ===
-\aussagePlakat{AUSSAGE B}{28pt}{42pt}{%
+\aussagePlakat{AUSSAGE B}{30pt}{45pt}{%
 Was das Produkt seiner Arbeit ist, ist er nicht.\\
 Je mehr Gegenstände der Arbeiter produziert,\\
 um so mehr gerät er unter die Herrschaft seines Produkts,\\
 des Kapitals.%
-}{Karl Marx: Ökonomisch-philosophische Manuskripte (1844)}
+}
 
 % === AUSSAGE C ===
-\aussagePlakat{AUSSAGE C}{26pt}{38pt}{%
+\aussagePlakat{AUSSAGE C}{28pt}{42pt}{%
 Seine Arbeit ist daher nicht freiwillig,\\
 sondern gezwungen, Zwangsarbeit.\\
 Sie ist nicht die Befriedigung eines Bedürfnisses,\\
 sondern nur ein Mittel,\\
 um Bedürfnisse außer ihr zu befriedigen.%
-}{Karl Marx: Ökonomisch-philosophische Manuskripte (1844)}
+}
 
 % === AUSSAGE D ===
-\aussagePlakat{AUSSAGE D}{27pt}{40pt}{%
+\aussagePlakat{AUSSAGE D}{28pt}{42pt}{%
 Es kommt daher zum Resultat,\\
 dass der Mensch sich nur mehr in seinen tierischen Funktionen\\
 (Essen, Trinken, Zeugen) als freitätig fühlt\\
 und in seinen menschlichen Funktionen nur mehr als Tier.%
-}{Karl Marx: Ökonomisch-philosophische Manuskripte (1844)}
+}
 
 \end{document}
